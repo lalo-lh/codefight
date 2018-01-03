@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputArray){
+   var max=0;
+var arr=[];
+if(inputArray.length-1==0)arr=inputArray;
+else{
+for(let i=0;i<inputArray.length-1;i++){
+if(inputArray[i].length > inputArray[i+1].length || inputArray.length==1){
+    if(inputArray[i].length>max) {max = inputArray[i].length;}
+} else if(inputArray[i+1].length>max) {max=inputArray[i+1].length}
+}
+}
+for(let i=0;i<=inputArray.length-1;i++){
+  if(inputArray[i].length==max){
+  arr.push(inputArray[i]);
+}
+}
+return arr;
+}
+
+n=["abc", 
+ "eeee", 
+ "abcd", 
+ "dcd"];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(picture){
+    var l = picture[0].length+2;
+    var res =[];
+    var cap ="";
+    for(var j=1; j<=l;j++){
+        cap+="*";
+    }
+    res.push(cap);
+    console.log(l);
+    for(var i = 0;i<picture.length;i++){
+        res.push("*"+picture[i]+"*");
+    }
+    res.push(cap);
+    return res;
+}
+
+n=["abc", 
+ "ded"];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

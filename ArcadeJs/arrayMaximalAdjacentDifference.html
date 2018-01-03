@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputArray){
+    var res=0;
+    for(var i=1;i<=inputArray.length-1;i++){
+        if(inputArray[i]>inputArray[i-1]){
+            if(inputArray[i]-inputArray[i-1]>res){
+                res = inputArray[i]-inputArray[i-1];
+            }
+        } else {
+            if(inputArray[i-1]-inputArray[i]>res){
+                res = inputArray[i-1]-inputArray[i];
+            }
+        }
+    }
+    return res;
+}
+
+n=[-1, 4, 10, 3, -2];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

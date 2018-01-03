@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(statues){
+   var count = 0;
+    var x=0;
+    statues.sort(function(a,b){return a-b});
+    for(var i = statues[0];i<=statues[statues.length-1];i++){
+        if(i>statues[x]){
+            i--;
+        }
+        if(i!=statues[x]){
+            count++;
+        }else{
+            x++;
+        }
+    }
+    return count;
+}
+
+n=[5, 4, 6];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

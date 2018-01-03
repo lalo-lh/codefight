@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(n){
+    var s = n.toString();
+    var l = s.length;
+    var r=0;var q=0;
+    for(var i=0;i<=s.length-1;i++){
+        if(i<=(l/2)-1){
+            q+=parseInt(s[i]);
+        }else {
+            r+=parseInt(s[i]);
+        }
+    }
+    console.log(q);
+    console.log(r);
+    
+    if(q==r){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+n=134008;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

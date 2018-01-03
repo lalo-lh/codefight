@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(yourLeft, yourRight, friendsLeft, friendsRight){
+    if((yourLeft===friendsLeft || yourLeft===friendsRight) && (yourRight===friendsLeft || yourRight===friendsRight)){
+            return true;
+    }
+    return false;
+}
+
+yourLeft= 15;
+yourRight= 10;
+friendsLeft= 15;
+friendsRight= 10;
+
+var muestra = document.getElementById("result").innerHTML = codefight(yourLeft, yourRight, friendsLeft, friendsRight);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputString){
+  var x=0;
+    for(var y=inputString.length-1;y>0;y--){
+        if(inputString[x]!=inputString[y]){ 
+          return false;
+        }
+        x++;
+    }
+    return true;
+}
+
+n="a";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

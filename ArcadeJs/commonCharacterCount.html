@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(s1,s2){
+   var common=0;
+    for(var i=0;i<=s1.length-1;i++){
+        for(var j=0;j<=s2.length-1;j++){
+            if(s1[i]==s2[j]){
+                common++;
+                s2= s2.replace(s2[j],"");
+                break;
+            }
+        }
+    }
+    
+    return common;
+}
+
+n="abca";
+m="xyzbac";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,m);
+
+</script>
+</body>
+</html>

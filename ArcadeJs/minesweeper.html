@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(matrix){
+    var arr=[];
+    var res=[];
+    var count=0;
+    for(var i=0;i<=matrix.length-1;i++){
+        for(var j=0;j<=matrix[i].length-1;j++){ 
+            if(i!=0){
+                if(matrix[i-1][j-1]==true){
+                    count++;
+                }
+                if(matrix[i-1][j]==true){
+                    count++;
+                }
+                if(matrix[i-1][j+1]==true){
+                    count++;
+                }
+            }
+            if(j!=0){
+                if(matrix[i][j-1]==true){
+                    count++;
+                }
+                if(i+1<=matrix.length-1){
+                    if(matrix[i+1][j-1]==true){
+                        count++;
+                    }
+                }
+            }
+            if(matrix[i][j+1]==true){
+                count++;
+            }
+            if(i+1<=matrix.length-1){//este
+                if(matrix[i+1][j]==true){
+                    count++;
+                }
+
+                if(matrix[i+1][j+1]==true){
+                    count++;
+                }
+            }
+            arr.push(count);
+            count=0;
+        }
+        res.push(arr);
+        arr=[];
+    }
+    console.log(res);
+    return res;
+}
+
+n=[[false,false,false], 
+ [false,false,false]];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

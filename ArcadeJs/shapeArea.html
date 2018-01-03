@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(n){
+   var res=1;
+    for(i=1;i<=n-1;i++){
+        if(n==1){
+        return 1;
+    } else {
+        res+=i*4;
+    }
+    }   
+    return res;
+}
+
+n=3;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

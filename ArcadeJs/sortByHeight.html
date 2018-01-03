@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(a){
+    var bar=a.slice();
+    var j=0;
+    bar.sort(function(a,b){return a-b});
+    for(var i=bar.length-1;i>=0;i--){
+        if(bar[i]== (-1)){
+            bar.splice(i,1);
+        }
+    }
+    for(var i=0;i<=a.length-1;i++){
+        if(a[i]!= -1){
+            a[i]=bar[j];
+            j++;
+        }
+    }
+    
+    return a;
+}
+
+n=[4, 2, 9, 11, 2, 16];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(a){
+    var arr = [0,0];
+    for(var i = 0; i<= a.length-1;i++){
+        if(i == 0 || i%2==0){
+            arr[0] += a[i];
+        }
+        else {
+            arr[1] +=a[i];
+        }
+    }
+    return arr;
+}
+
+n=[50, 60, 60, 45, 70];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

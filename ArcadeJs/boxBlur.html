@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(image){
+    var res=[];
+    var sum=0;
+    var l = image[0].length;
+    var a = image.length;
+    var p1 = 0;
+    var p2 = 0;
+    var i = 0;
+    var j = 0;
+    var total=[];
+    while(p1+3<=a){
+    while(p2+3<=l){
+        i = p1;
+        j = p2;
+
+        for(i;i<p1+3;i++){
+            for(j;j<p2+3;j++){
+                //console.log(image[i][j]);
+                sum+=image[i][j];
+            }
+            j=p2;
+        }
+
+        res.push(Math.floor(sum/9));
+        sum=0;
+        p2++;
+    }
+    total[p1]=res;
+    res=[];
+    p1++;
+    p2=0;
+    
+    }
+    console.log(total);
+    return total;
+}
+
+n=[[0,18,9], 
+ [27,9,0], 
+ [81,63,45]];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputString){
+    var count = 0;
+    var letter = 0;
+    var txt = "abcdefghijklmnopqrstuvwxyz"
+
+    for (var i = 0; i <= txt.length-1; i++) {
+        count =0;
+        for (var j = 0; j < inputString.length; j++) {
+            if(txt[i]===inputString[j]){
+                count+=1;
+            }
+        }
+        if(count%2!=0){
+            letter+=1;
+        }
+    }
+    if (letter>1) {
+        return false;
+    }
+    return true;
+}
+
+n="abca";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

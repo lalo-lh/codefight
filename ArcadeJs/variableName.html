@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(name){
+	var expresion = new RegExp(/^\d/);
+   var expresion2 = new RegExp(/\W/);
+   if(expresion.test(name) || expresion2.test(name)){
+      return false;
+   }
+   return true;
+}
+
+n="var_1__Int";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

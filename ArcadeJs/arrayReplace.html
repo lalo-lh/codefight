@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputArray, elemToReplace, substitutionElem){
+	for(var i = 0;i<=inputArray.length-1;i++){
+        console.log(inputArray[i]);
+            if(inputArray[i]== elemToReplace){
+                inputArray.splice(i,1,substitutionElem);
+            }
+        }
+    return inputArray;
+}
+
+n=[1,2,3,4,5];
+m = 3;
+o = 0;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,m,o);
+
+</script>
+</body>
+</html>

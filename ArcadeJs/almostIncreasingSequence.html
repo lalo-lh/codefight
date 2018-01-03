@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(sequence){
+   let left = 0;
+let right = sequence.length - 1;
+while(left < right){
+  if(sequence[left] >= sequence[left+1]) break;
+  left++;
+}
+if(left == right) return true;
+
+while(right>0){
+  if(sequence[right-1] >= sequence[right]) break;
+  right--;
+}
+return left+1==right && 
+  (right == sequence.length-1 
+  || sequence[left] < sequence[right+1]
+  || left == 0
+  || sequence[left-1] < sequence[right]);
+}
+
+n=[1, 3, 2];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

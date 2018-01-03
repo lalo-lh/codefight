@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(matrix){
+   var total=0;
+    for(let i=0;i<=matrix.length-1;i++){
+    //var arr=n[i];
+    for(let x in matrix[i]){
+      if(matrix[i][x]==0 && i<matrix.length-1){
+        matrix[i+1][x]=0;
+      }
+    }
+  }
+
+for(y in matrix){
+console.log(matrix[y]);
+for(w in matrix[y]) total=total+matrix[y][w];
+}
+
+return total;
+}
+
+n=[[1,1,1,0], 
+ [0,5,0,1], 
+ [2,1,3,10]];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

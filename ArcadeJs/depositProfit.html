@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(deposit,rate,threshold){
+    var year = 0;
+    while(deposit<threshold){
+        deposit+=deposit*(rate/100);
+            year++;
+          }
+          return year;
+}
+
+n=100;
+x=20;
+m=170;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,x,m);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputArray){
+    //recibiendo ayuda
+    function validarVal(str1,str2){ 
+        var cont=0;
+        for (var i = 0; i < str1.length; i++) {
+            if(str1[i] != str2[i]) cont++;
+        }
+        return cont == 1;
+    }
+
+    function RandomePer(n){
+        const fulllength = n.length;
+        var seq =[];
+        var perm=[];
+        function permute(n){
+            for (var i = 0; i < n.length; i++) {
+                var str = n[i];
+                seq.push(str);
+
+                if(seq.length == fulllength){
+                    perm.push([...seq]);
+                } else {
+                    var rem = [...n.slice(0,i),...n.slice(i+1)];
+                    permute(rem);
+                }
+            seq.pop();
+            }
+        }
+    permute(n);
+    return perm;        
+    }
+
+    
+    var sequences = RandomePer(inputArray);
+
+    for (var sequence of sequences) {
+        var posible = true;
+
+        for (var i = 1; i < sequence.length; i++) {
+            var thisOne = sequence[i];
+            var prev = sequence[i-1];
+
+            if(!validarVal(thisOne,prev)){
+                posible = false;
+                break;
+            }
+        }
+        if(posible) return true;
+    }
+    
+    return false;
+}
+
+n=["aba","bbb","bab"];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

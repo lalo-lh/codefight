@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputArray,k){
+   	var i = 0;
+    var max=0;
+    var sum = 0;
+    var cont = 0;
+    while(cont<k){
+            sum+=inputArray[cont];
+            cont++;
+        }
+    console.log(sum);
+    while(k<=inputArray.length){
+        if(sum>max){
+            max=sum;
+        }
+        sum = sum - inputArray[i] + inputArray[k++];
+        i++;
+    }
+    return max;
+}
+
+n=[2, 4, 10, 1];
+k=2;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,k);
+
+</script>
+</body>
+</html>

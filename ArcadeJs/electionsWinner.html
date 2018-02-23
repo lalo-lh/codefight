@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(votes,k){
+  var reps = 0;
+  var cont = 0;
+  var mx = Math.max(...votes);
+  for(var i = 0;i<=votes.length-1;i++){
+    if (votes[i]+k>mx){
+      cont++;
+    } else if(votes[i]==mx){
+      cont++;
+      reps++;
+      for(var j=0;j<=votes.length-1;j++){
+        if(votes[j]+1>=mx && j!=i && k>0){
+          cont--;
+          break;
+        }
+      }
+    }
+  } 
+    if(k<1 && reps>1){
+      cont = cont - reps;
+    }
+  return cont;
+}
+
+n=[2, 3, 5, 2];
+m=3;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,m);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(bishop,pawn){
+   	var lt = "abcdefgh";
+    var hor1 = lt.indexOf(pawn[0]);
+    var hor2 = lt.indexOf(bishop[0]);
+    var vert1 = parseInt(pawn[1]);
+    var vert2 = parseInt(bishop[1]);
+    x = hor1-hor2;
+    if(vert1+x==vert2 || vert1-x==vert2){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+n="h1";
+m="h3";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,m);
+
+</script>
+</body>
+</html>

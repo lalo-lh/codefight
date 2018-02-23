@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(value1,weight1,value2,weight2,maxW){
+   	var carring =0;
+    var val=0;
+    if(weight1+weight2 <= maxW){
+        return value1+value2;
+    }else if(weight1>maxW && weight2>maxW){
+        return 0;
+    }else if(weight1 <= maxW && value1 > value2 || weight2>maxW){
+        return value1;
+    } else if(weight2 <= maxW && value2>value1 || weight1>maxW){
+            return value2;
+    } else {
+        return value1;
+    }
+    
+}
+
+n=10;
+m=5;
+x=6;
+y=4;
+z=8;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,m,x,y,z);
+
+</script>
+</body>
+</html>

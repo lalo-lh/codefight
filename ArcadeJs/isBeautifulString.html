@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputString){
+   	var cont = 0;
+    var fin = 0;
+    var ab = "abcdefghijklmnopqrstuvwxyz";
+    for(var j = ab.length;j>=0;j--){
+        for(var i=0;i<=inputString.length-1;i++){
+            if(ab[j]==inputString[i]){
+                cont++;
+            }
+        }
+        if(fin>cont){
+            console.log(cont);
+            console.log(fin);
+            return false;
+        }
+        fin = cont;
+        cont=0;
+    }
+    return true;
+}
+
+n="aabbb";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

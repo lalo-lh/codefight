@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(inputString){
+   	var digit = new RegExp(/\d/);
+    var res="";
+    for(var i=0;i<=inputString.length-1;i++){
+        if(digit.test(inputString[i])){
+            res+=inputString[i];
+        }else {
+            break;
+        }
+    }
+    return res;
+}
+
+n="0123456789";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

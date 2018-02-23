@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(n){
+   	var cont=0;
+    var k=0;
+    function res(x){
+        var k=0;
+        while(x>0){
+            k=k+x%10;
+            x=parseInt(x/10);
+        }
+        return k;
+    }
+    
+    while(n>9){
+        cont++;
+        n=res(n);
+    }
+    console.log(k);
+    //console.log(x);
+    return cont;
+}
+
+n=100;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

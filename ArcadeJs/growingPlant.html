@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(upSpeed,downSpeed,desiredHeight){
+   	var growing =0;
+    var cont=1;
+    growing += upSpeed;
+    while (growing < desiredHeight){
+        growing += upSpeed;
+        growing -= downSpeed;
+        cont++;
+    } 
+    return cont;
+}
+
+n=10;
+m=9;
+x=4;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n,m,x);
+
+</script>
+</body>
+</html>

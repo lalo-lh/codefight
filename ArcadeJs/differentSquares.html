@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(matrix){
+   	    var cont=0;
+    var res=0;
+    var mat=[];
+    function compare(x,y){
+        for(var i=0;i<x.length;i++){
+            if(x[i]!=y[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    for(var i =0;i<matrix.length-1;i++){
+        for(var j=0;j<matrix[i].length-1;j++){
+            mat.push(matrix[i][j]);
+            mat.push(matrix[i][j+1]);
+            mat.push(matrix[i+1][j]);
+            mat.push(matrix[i+1][j+1]);
+            //console.log(mat);
+        }
+    }
+    var size = mat.length/4;
+    var uno=[];
+    var i=0;
+    for(var j=0;j<size;j++){
+        uno[j]=mat.slice(i,i+=4);
+    }
+    var x =0;
+    var y =1;
+    while(x<uno.length){
+        while(y<uno.length){
+            if(compare(uno[x],uno[y])){
+                cont++;
+                break;
+            }
+        y++;
+        }
+    x++;
+    y=x+1;
+    }
+    return size-cont;
+}
+
+n= [[1,2,1], 
+ [2,2,2], 
+ [2,2,2], 
+ [1,2,3], 
+ [2,2,1]];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

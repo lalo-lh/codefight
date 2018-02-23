@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(s){
+   	var cont =1;
+    var res = "";
+    for(var i = 1;i<=s.length;i++){
+        if(s[i]==s[i-1]){
+            cont++;
+        } else {
+            if(cont!=1){
+                res += cont.toString().concat(s[i-1]);
+            } else {
+                res = res.concat(s[i-1]);
+            }
+            cont=1;
+        }
+    }
+    return res;
+}
+
+n="aabbbc";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

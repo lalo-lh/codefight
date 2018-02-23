@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(grid){
+  var n=1;
+  while(n<=6){
+    for (var k=n;k<n+2;k++){
+      var c=0;
+      for(var c=0;c<7;c+=3){
+        for(var i=c;i<c+3;i++){
+          for(var j=c;j<c+3;j++){
+            if(grid[k-1][i]==grid[k+1][j] && k==n){
+                  return false;
+            }
+            if(grid[k-1][i]==grid[k][j]){
+                return false;
+            }
+          }
+        }
+      }
+    }
+  n+=3;
+  }
+  for(var n=0;n<9;n++){
+    for(var i=0;i<8;i++){
+      for(var j=i+1;j<9;j++){
+        if(grid[n][i]==grid[n][j] || grid[i][n]==grid[j][n]){
+          return false;
+        }
+      }
+    }
+  }
+    return true;
+}
+
+n=[[1,3,2,5,4,6,9,8,7], 
+ [4,6,5,8,7,9,3,2,1], 
+ [7,9,8,2,1,3,6,5,4], 
+ [9,2,1,4,3,5,8,7,6], 
+ [3,5,4,7,6,8,2,1,9], 
+ [6,8,7,1,9,2,5,4,3], 
+ [5,7,6,9,8,1,4,3,2], 
+ [2,4,3,6,5,7,1,9,8], 
+ [8,1,9,3,2,4,7,6,5]];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

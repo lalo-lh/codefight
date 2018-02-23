@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(n){
+   	var total = 0;
+    var s = n.toString();
+    for(var i=0;i<=s.length-1;i++){
+        res = parseInt(s.slice(0,i).concat(s.slice(i+1)));
+        console.log(res);
+        if(res>total){
+            total = res;
+        }
+    }
+    return total;
+}
+
+n=152;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

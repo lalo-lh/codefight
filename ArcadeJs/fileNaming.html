@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(names){
+   	var cont = 0;
+    var j=0;
+    var exp=new RegExp(/\(\d\)$/);
+    while(j<names.length){
+        for(var i=j+1;i<names.length;i++){
+            if(names[j]==names[i]){
+                cont++;
+                for(var x=0;x<names.length;x++){
+                    saves = names[i]+"("+cont+")";
+                    if(names[x] == saves && x<i){
+                        cont++;
+                    } 
+                }
+                names[i]+="("+cont+")";
+                
+            }
+        }
+        j++;
+        cont=0;
+    }
+    return names;
+}
+
+n=["doc", 
+ "doc", 
+ "image", 
+ "doc(1)", 
+ "doc"];
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(text){
+  var word="";
+  var res="";
+  var len=0;
+  var exp = /\w/;
+  for (var i = 0; i < text.length; i++){
+    if(exp.test(text[i]) || text[i]=="_"){
+      word += text[i];
+    } else {
+      if(word.length>len){
+        len = word.length;
+        res = word;
+      }
+      
+      word="";
+    }
+  }
+    if(word==text){
+    return text;
+  }
+  return res;
+}
+
+n="Ready, steady, go!";
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

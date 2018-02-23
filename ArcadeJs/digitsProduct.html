@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(product){
+   	var p=9;
+    var str="";
+    
+    function rev(p){
+        if(p==1){
+                str = "-1";
+                return;
+            }
+        if((product/p)%1==0){
+           product =product/p;
+            str=p+str;
+            if(product<=9){
+                if(product == 1){
+                    return -1;
+                }
+               str=product+str;
+            } else {
+                  
+                rev(9);
+            }
+        } else {
+            return rev(p-1);
+        }
+    }
+    
+    if(product==0){
+        return 10;
+    }else if(product ==1){
+        return 1;
+    }else {
+        rev(p);
+        return parseInt(str);
+    }
+}
+
+n=12;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

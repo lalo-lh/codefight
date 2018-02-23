@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeFigth</title>
+</head>
+<body>
+<p> CodeFigth</br>
+
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+
+<script>
+function codefight(n){
+   	//with a clue!
+  var array=[];
+  var res=[];
+  var cont=1;
+  var spiral=true;
+ 	var up=0;
+
+ 	for(var i=1;i<=n;i++){
+ 		array.push(0);
+ 	}
+ 	for(var i=0;i<n;i++){
+ 		res[i]=array.slice();
+ 	}
+ 	while(cont<=n*n){
+ 		if(spiral){
+		 	for(var i=up;i<n-up;i++){
+		 		res[up].splice(i,1,cont);
+		 		cont++;
+		 	}
+		 	if(cont>=n*n)
+		 		break;
+		 	cont--;
+		 	for(var i=up;i<n-up;i++){
+		 		res[i].splice(n-1-up,1,cont);
+		 		cont++;
+		 	}
+		 	cont--;
+		 	 spiral=false;
+		 	 
+	 	} else {
+	 		
+	 		for(var i=n-1-up;i>=0+up;i--){
+		 		res[n-1-up].splice(i,1,cont);
+		 		cont++;
+		 	}
+
+		 	cont--;
+		 	for(var i=n-1-up;i>=1+up;i--){
+		 		res[i].splice(up,1,cont);
+		 		cont++;
+		 	}
+		 	//cont--;
+		 	spiral=true;
+		 	up++;
+	 	}
+	 	
+	 }
+ 	return res;
+}
+
+n=5;
+
+var muestra = document.getElementById("result").innerHTML = codefight(n);
+
+</script>
+</body>
+</html>

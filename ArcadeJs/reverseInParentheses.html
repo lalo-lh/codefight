@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeWars</title>
+</head>
+<body>
+<p>
+ counting Duplicates </br>
+ 
+</p>
+  <div id="result" style="font-size: 6em; margin: 10%;"></div>
+  <script>
+function codewars(s) {
+
+    function reverse(s){
+        var split = s.split("");
+        var rev = split.reverse();
+        var join = rev.join("");
+        return join;
+    }
+
+    function busqueda(s){
+        var pos = s.lastIndexOf(")");
+        var frag = 0;
+        var finfrag = pos; 
+        for(var i=pos-1;i>=0;i--){
+            if(s[i]==")"){
+                finfrag = i;
+                pos = finfrag;
+            }
+            if(s[i]=="("){
+                frag = i+1;
+                break;
+            }
+        }
+        
+        var res = s.slice(frag,finfrag)
+        res = reverse(res);
+        var end = s.slice(0,frag-1) + res + s.slice(finfrag+1,s.length);
+
+        return end;
+    }
+
+    //console.log(s.indexOf(")"));
+    var n = 0 ,m=0;
+   for(var i = 0;i<=s.length;i++){
+        if (s[i] == "(") {
+            n++;
+        } 
+        if(s[i] == ")"){
+            m++;
+        }
+   }
+   console.log(n);
+   while(n > 0 && n == m){
+        s = busqueda(s);
+        console.log(s);
+        n--; m--;
+    } 
+    console.log(n);
+    return s;
+
+}
+
+x = "foo(bar(rear(and))is)blim";
+
+var muestra = document.getElementById("result").innerHTML = codewars(x);
+
+</script>
+</body>
+</html>
